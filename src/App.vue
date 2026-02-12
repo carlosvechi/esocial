@@ -1,34 +1,23 @@
 <template>
-  <TheNavBar />
-  <TheElder />
-  <TheFooter />
+  <template v-if="isAuthenticated">
+    <TheNavBar />
+    <TheTemplate />
+    <TheFooter />
+  </template>
+
+  <LoginView v-else @login-success="handleLoginSuccess" />
 </template>
 
+<script setup>
+import { ref } from 'vue'
+import TheFooter from './components/TheFooter.vue'
+import TheNavBar from './components/TheNavBar.vue'
+import LoginView from './views/LoginView.vue'
+import TheTemplate from './views/TheTemplate.vue'
 
-<script>
-import TheFooter from './components/TheFooter.vue';
-import TheNavBar from './components/TheNavBar.vue';
-import TheElder from './views/TheTemplate.vue';
+const isAuthenticated = ref(false)
 
-
-export default {
-  name: 'App',
-  components: {
-   TheElder,
-   TheNavBar,
-   TheFooter
-  }
+const handleLoginSuccess = () => {
+  isAuthenticated.value = true
 }
 </script>
-
-<style>
-body {
-  background-color: #ffffff !important;
-}
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 90px; /* altura da navbar */
-}
-
-
-</style>

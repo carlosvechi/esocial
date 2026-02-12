@@ -59,6 +59,8 @@
 <script setup>
 import { reactive, ref } from 'vue'
 
+const emit = defineEmits(['login-success'])
+
 const form = reactive({
   email: '',
   password: ''
@@ -118,6 +120,8 @@ const handleSubmit = () => {
 
   status.type = 'success'
   status.message = 'Login validado no front-end com sucesso!'
+
+  emit('login-success')
 }
 </script>
 

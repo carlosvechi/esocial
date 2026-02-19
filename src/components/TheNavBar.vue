@@ -27,7 +27,7 @@
             <a class="nav-link" :class="{ active: currentPage === 'formulario' }" href="#" @click.prevent="goTo('formulario')">Formulário</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" :class="{ active: currentPage === 'recursos' }" href="#" @click.prevent="goTo('recursos')">Conteúdo extra</a>
+            <a class="nav-link" :class="{ active: currentPage === 'recursos' }" href="#" @click.prevent="goTo('recursos')">Plano semanal</a>
           </li>
         </ul>
 

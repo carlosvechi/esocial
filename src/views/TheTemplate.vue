@@ -192,6 +192,19 @@
     </div>
   </section>
 
+  <section class="container mt-5">
+    <div class="p-4 rounded-4 border bg-light">
+      <h3 class="lora mb-2">Acesse outras páginas do projeto</h3>
+      <p class="text-muted">
+        Use estas rotas para preencher um formulário de acompanhamento e ver conteúdo extra de apoio emocional.
+      </p>
+      <div class="d-flex flex-wrap gap-2">
+        <button class="btn btn-primary" @click="emit('navigate', 'formulario')">Ir para formulário</button>
+        <button class="btn btn-outline-primary" @click="emit('navigate', 'recursos')">Ir para conteúdo extra</button>
+      </div>
+    </div>
+  </section>
+
   <!-- Seção: Canais de ajuda -->
   <section id="ajuda" class="container mt-5 mb-5">
     <div class="p-4 rounded-4 border">
@@ -222,8 +235,8 @@
   </section>
 </template>
 
-<script>
-export default {}
+<script setup>
+const emit = defineEmits(['navigate'])
 </script>
 
 <style>
